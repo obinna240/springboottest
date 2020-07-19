@@ -2,6 +2,7 @@ package com.example.demo.resController;
 
 import com.example.demo.domain.Person;
 import com.example.demo.repo.DemoService;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,6 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import static org.hamcrest.core.Is.is;
+import static org.mockito.Mockito.reset;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -28,6 +30,11 @@ class OrderControllerTest {
     @BeforeEach
     void init(){
         mockMvc = MockMvcBuilders.standaloneSetup(orderController).build();
+    }
+
+    @AfterEach
+    void tearDown() {
+        reset(demoService);
     }
 
     @Test
