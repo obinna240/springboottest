@@ -9,6 +9,8 @@ public class DemoRepository {
 
     public String printNumber(){return UUID.randomUUID().toString();}
 
-    public String returnEntry(String entry) {return entry+ " "+entry;}
+    public String returnEntry(String entry) {
+        return entry+ " "+entry;
+    }
 
 }

@@ -22,16 +22,13 @@ public class OrderController {
         return new ResponseEntity<>(demoService.retrieveNumber(), HttpStatus.OK);
     }
 
-    @GetMapping(path = "/{element}")
+    @GetMapping(path = "/element/{element}")
     public ResponseEntity<String> getString(@PathVariable("element") String element){
         return new ResponseEntity<>(demoService.returnEntryMethd(element), HttpStatus.OK);
     }
 
     @GetMapping(path="/{fname}/{lname}")
     public ResponseEntity<Person> getPerson(@PathVariable("fname") String fname, @PathVariable("lname") String lname) {
-
-        System.out.println(fname);
-        System.out.println(lname);
         return new ResponseEntity<Person>(new Person(fname, lname), HttpStatus.OK);
     }
 

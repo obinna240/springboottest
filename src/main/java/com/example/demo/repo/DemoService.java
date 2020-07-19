@@ -12,7 +12,9 @@ public class DemoService {
 
     public String retrieveNumber(){return demoRepository.printNumber();}
 
-    public String returnEntryMethd(String test){return demoRepository.returnEntry(test);}
+    public String returnEntryMethd(String test){
+        return demoRepository.returnEntry(test);
+    }
 
     public Person createPerson(String fname, String lname){
         return new Person(fname, lname);

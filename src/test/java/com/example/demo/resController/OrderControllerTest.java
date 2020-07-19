@@ -31,11 +31,24 @@ class OrderControllerTest {
     }
 
     @Test
-    public void test1() throws Exception{
+    public void shouldReturnPerson() throws Exception{
 
         mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/fname/lname"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.name", is("fname")));
     }
+
+    @Test
+    public void shouldReturnRandom() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/random"))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void shouldReturnElement() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/element/element"))
+                .andExpect(status().isOk());
+    }
+
 }
