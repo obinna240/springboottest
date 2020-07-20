@@ -34,7 +34,7 @@ class PageControllerTest {
 
     @Test
     void getPerson() throws Exception {
-        mockMvc.perform(get("/apps/fname/lname"))
+        mockMvc.perform(get("/apps/names/fname/lname"))
                 .andExpect(status().isOk());
     }
 }
