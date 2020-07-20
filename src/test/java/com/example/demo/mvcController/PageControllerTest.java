@@ -27,11 +27,15 @@ class PageControllerTest {
     }
 
     @Test
-    void runApp2() {
+    void runRandomTest() throws Exception {
+        mockMvc.perform(get("/apps/random"))
+                .andExpect(status().isOk());
     }
 
     @Test
-    void getPerson() {
+    void getPerson() throws Exception {
+        mockMvc.perform(get("/apps/fname/lname"))
+                .andExpect(status().isOk());
     }
 }
 
