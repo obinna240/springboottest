@@ -26,9 +26,9 @@ class PersonRepositoryTest {
         assertThat(pp.getName()).isEqualTo("John");
     }
 
-    @Test
-    void findPersonEntityUsingNativeQuery() {
-        PersonEntity pp = personRepository.findPersonEntityUsingNativeQuery("John");
-        assertThat(pp.getName()).isEqualTo("John");
-    }
+//    @Test
+//    void findPersonEntityUsingNativeQuery() {
+//        PersonEntity pp = personRepository.findPersonEntityUsingNativeQuery("John");
+//        assertThat(pp.getName()).isEqualTo("John");
+//    }
 }
